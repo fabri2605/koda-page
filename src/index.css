@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #d4d4d4;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-xs tracking-widest2 text-koda-muted uppercase;
+  }
+  .section-title {
+    @apply font-mono text-3xl md:text-4xl font-bold text-koda-white leading-tight;
+  }
+  .card {
+    @apply bg-koda-card border border-koda-border rounded-none p-6 transition-colors duration-200 hover:border-koda-accent/30;
+  }
+  .btn-primary {
+    @apply bg-koda-accent text-koda-black font-mono font-bold text-sm tracking-widest px-8 py-4 uppercase transition-all duration-200 hover:bg-koda-accent-dim active:scale-95;
+  }
+  .btn-outline {
+    @apply border border-koda-accent text-koda-accent font-mono font-bold text-sm tracking-widest px-8 py-4 uppercase transition-all duration-200 hover:bg-koda-accent hover:text-koda-black active:scale-95;
+  }
+  .divider {
+    @apply border-t border-koda-border;
+  }
+}
