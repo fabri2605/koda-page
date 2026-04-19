@@ -1,26 +1,24 @@
-// Replace the SoundCloud track URLs with your actual track URLs
 const tracks = [
   {
-    title: "Track One",
-    description: "Dark & hypnotic — peak time techno",
-    // Replace with your actual SoundCloud embed URL
+    title: "Return (Original Mix)",
+    description: "Alula Tunes",
     embedUrl:
-      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1234567890&color=%23e8ff00&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true",
-    placeholder: true,
+      "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/indikodaa/koda-ar-return-original-mix-alula-tunes&color=%23e8ff00&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true",
+    placeholder: false,
   },
   {
-    title: "Track Two",
-    description: "Groovy & percussive — early morning set",
+    title: "Forest Keeper (Original Mix)",
+    description: "Minimal Genesis V.A. — Joker Black Label",
     embedUrl:
-      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1234567891&color=%23e8ff00&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true",
-    placeholder: true,
+      "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/indikodaa/koda-ar-forest-keeper-original-mix&color=%23e8ff00&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true",
+    placeholder: false,
   },
   {
-    title: "Track Three",
-    description: "Psychedelic & textured — slow burn",
+    title: "King of Darkness",
+    description: "PRYZM Waves",
     embedUrl:
-      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1234567892&color=%23e8ff00&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true",
-    placeholder: true,
+      "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/indikodaa/koda-ar-king-of-darkness-pryzm&color=%23e8ff00&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true",
+    placeholder: false,
   },
 ];
 
@@ -79,20 +77,12 @@ export default function Music() {
         {/* SoundCloud / Bandcamp CTA */}
         <div className="flex flex-wrap gap-4 items-center">
           <a
-            href="https://soundcloud.com"
+            href="https://soundcloud.com/indikodaa"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline text-xs py-3 px-6"
           >
             All tracks on SoundCloud ↗
-          </a>
-          <a
-            href="https://bandcamp.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="section-label hover:text-koda-accent transition-colors"
-          >
-            Bandcamp ↗
           </a>
         </div>
       </div>

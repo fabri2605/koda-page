@@ -7,7 +7,7 @@ export default function Contact() {
     service: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const services = [
     "Mix",
@@ -27,9 +27,13 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Replace with your actual form endpoint (Formspree, EmailJS, etc.)
-    // For now, just show success state
-    setSubmitted(true);
+    const bodyText = `Name: ${form.name}\nEmail: ${form.email}\nService: ${form.service}\n\n${form.message}`;
+    const subject = encodeURIComponent(`[KODA] ${form.service} — ${form.name}`);
+    navigator.clipboard.writeText(bodyText).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 4000);
+    });
+    window.location.href = `mailto:juanpabloaliaga99@gmail.com?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
   };
 
   return (
@@ -47,7 +51,7 @@ export default function Contact() {
 
             <p className="text-koda-text leading-relaxed mb-8">
               Tell me what you&apos;re working on. I&apos;ll get back to you within
-              24 hours with a clear answer on whether I can help, what it&apos;ll
+              48 hours with a clear answer on whether I can help, what it&apos;ll
               cost, and what the timeline looks like.
             </p>
 
@@ -55,10 +59,10 @@ export default function Contact() {
               <div>
                 <span className="section-label block mb-1">Email</span>
                 <a
-                  href="mailto:koda@example.com"
+                  href="juanpabloaliaga99@gmail.com"
                   className="font-mono text-koda-white hover:text-koda-accent transition-colors"
                 >
-                  koda@example.com
+                  juanpabloaliaga99@gmail.com
                 </a>
               </div>
               <div>
@@ -70,7 +74,7 @@ export default function Contact() {
               <div>
                 <span className="section-label block mb-1">Response time</span>
                 <span className="font-mono text-koda-white text-sm">
-                  Within 24h
+                  Within 48h
                 </span>
               </div>
             </div>
@@ -78,18 +82,7 @@ export default function Contact() {
 
           {/* Right: Form */}
           <div>
-            {submitted ? (
-              <div className="border border-koda-accent/30 bg-koda-accent/5 p-10 text-center">
-                <div className="font-mono text-koda-accent text-4xl mb-4">✓</div>
-                <h3 className="font-mono text-koda-white text-lg font-bold mb-2">
-                  Message received
-                </h3>
-                <p className="text-koda-muted text-sm">
-                  I&apos;ll get back to you within 24 hours.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="section-label block mb-2">Name</label>
@@ -156,11 +149,16 @@ export default function Contact() {
                   Send Message
                 </button>
 
+                {copied && (
+                  <p className="font-mono text-koda-accent text-xs text-center">
+                    Message copied to clipboard — paste it in your email if it didn&apos;t auto-fill.
+                  </p>
+                )}
+
                 <p className="text-koda-muted text-xs text-center font-mono">
                   No spam. Just audio.
                 </p>
               </form>
-            )}
           </div>
         </div>
       </div>

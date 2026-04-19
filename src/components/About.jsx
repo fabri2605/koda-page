@@ -1,8 +1,8 @@
+import photo11 from "../assets/PRESKIT KODA11.jpg";
+
 const stats = [
-  { value: "8+", label: "Years producing" },
+  { value: "10+", label: "Years producing" },
   { value: "100+", label: "Tracks mixed" },
-  { value: "2", label: "Continents" },
-  { value: "∞", label: "BPM obsession" },
 ];
 
 export default function About() {
@@ -21,8 +21,8 @@ export default function About() {
 
             <div className="space-y-4 text-koda-text leading-relaxed">
               <p>
-                I&apos;m KODA — an Argentine techno/electronic producer and DJ
-                currently based in Melbourne, Australia. I&apos;ve been building
+                I&apos;m KODA — an Argentine techno/electronic producer and DJ.
+                I&apos;ve been building
                 music that lives in the low end since day one: heavy kicks,
                 hypnotic grooves, and that specific pressure that only works
                 when everything is perfectly aligned.
@@ -43,7 +43,7 @@ export default function About() {
 
             <div className="mt-8 flex gap-4">
               <a
-                href="https://soundcloud.com"
+                href="https://soundcloud.com/indikodaa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="section-label hover:text-koda-accent transition-colors"
@@ -52,7 +52,7 @@ export default function About() {
               </a>
               <span className="text-koda-border">|</span>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/koda_ar_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="section-label hover:text-koda-accent transition-colors"
@@ -62,26 +62,16 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right: stats + accent block */}
+          {/* Right: photo + stats */}
           <div className="space-y-4">
-            {/* Decorative block */}
-            <div className="border border-koda-accent/20 bg-koda-accent/5 p-8 mb-6">
-              <p className="font-mono text-koda-accent text-xs tracking-widest uppercase mb-3">
-                What this means for you
-              </p>
-              <ul className="space-y-2 text-koda-text text-sm">
-                {[
-                  "Club-tested low end — kick & bass that translates on any system",
-                  "Fast turnaround — no endless back-and-forth",
-                  "Honest feedback — I tell you what works and what doesn't",
-                  "Genre fluency — techno, house, electronica, experimental",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="text-koda-accent mt-0.5">→</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Portrait */}
+            <div className="overflow-hidden border border-koda-border">
+              <img
+                src={photo11}
+                alt="KODA"
+                className="w-full object-cover"
+                style={{ maxHeight: "520px", objectPosition: "center 18%" }}
+              />
             </div>
 
             {/* Stats */}

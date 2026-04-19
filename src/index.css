@@ -40,6 +40,18 @@ body {
   background: #555;
 }
 
+.hero-photo {
+  width: 60%;
+  object-position: left top;
+}
+
+@media (min-width: 768px) {
+  .hero-photo {
+    width: 100%;
+    object-position: 25% center;
+  }
+}
+
 @layer components {
   .section-label {
     @apply font-mono text-xs tracking-widest2 text-koda-muted uppercase;

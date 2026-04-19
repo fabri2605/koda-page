@@ -10,7 +10,7 @@ export default function Footer() {
 
         <div className="flex gap-6">
           <a
-            href="https://soundcloud.com"
+            href="https://soundcloud.com/indikodaa"
             target="_blank"
             rel="noopener noreferrer"
             className="section-label text-[10px] hover:text-koda-accent transition-colors"
@@ -18,20 +18,12 @@ export default function Footer() {
             SoundCloud
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/koda_ar_/"
             target="_blank"
             rel="noopener noreferrer"
             className="section-label text-[10px] hover:text-koda-accent transition-colors"
           >
             Instagram
-          </a>
-          <a
-            href="https://bandcamp.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="section-label text-[10px] hover:text-koda-accent transition-colors"
-          >
-            Bandcamp
           </a>
         </div>
 

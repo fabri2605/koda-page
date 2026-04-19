@@ -1,9 +1,20 @@
+import photo10 from "../assets/PRESKIT KODA10.jpg";
+
 export default function Hero() {
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col justify-center items-center text-center overflow-hidden px-6"
     >
+      {/* Artist photo background */}
+      <img
+        src={photo10}
+        alt=""
+        className="hero-photo absolute top-16 md:top-0 left-0 h-full object-contain opacity-20 pointer-events-none"
+      />
+      {/* Gradient overlay to keep text readable */}
+      <div className="absolute inset-0 bg-gradient-to-r from-koda-dark/80 via-koda-dark/40 to-transparent pointer-events-none" />
+
       {/* Background grid */}
       <div
         className="absolute inset-0 opacity-[0.04]"
@@ -18,8 +29,6 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-koda-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl">
-        <p className="section-label mb-6">Buenos Aires / Melbourne</p>
-
         <h1 className="font-mono font-bold text-6xl md:text-8xl lg:text-9xl text-koda-white tracking-tight leading-none mb-6">
           KODA
           <br />
